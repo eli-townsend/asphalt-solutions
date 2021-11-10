@@ -220,6 +220,7 @@ REVIEW
 }
 
 .orbit-slide {
+  height: auto;
   padding: 0 3rem;
 }
 
