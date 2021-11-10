@@ -43,6 +43,16 @@ a:hover {
   display: none;
 }
 
+p.as-paragraph {
+  text-align: justify;
+}
+
+@media screen and (max-width: 40em) {
+  p.as-paragraph {
+    text-align: left;
+  }
+}
+
 /***
 NAVIGATION
 ***/
@@ -192,10 +202,6 @@ REVIEW
 .review-name {
   display: block;
   margin-top: 1rem;
-}
-
-.testimonial-slider-container {
-  padding: 1rem 1rem;
 }
 
 .testimonial-slider-container .orbit-previous:hover, .testimonial-slider-container .orbit-previous:active, .testimonial-slider-container .orbit-previous:focus,
