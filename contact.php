@@ -6,7 +6,7 @@ if(isset($_POST['email'])) {
 
 
 
-    $email_to = "ENTER YOUR EMAIL HERE";
+    $email_to = "snowflakeperspective@gmail.com";
 
     $email_subject = "Asphalt Solution - Contact Form";
 
@@ -35,6 +35,8 @@ if(isset($_POST['email'])) {
 
         !isset($_POST['email']) ||
 
+        !isset($_POST['phone']) ||
+
         !isset($_POST['comments'])) {
 
         died('We are sorry, but there appears to be a problem with the form you submitted.');
@@ -46,6 +48,8 @@ if(isset($_POST['email'])) {
     $full_name = $_POST['full_name']; // required
 
     $email_from = $_POST['email']; // required
+
+    $phone = $_POST['phone']; // required
 
     $comments = $_POST['comments']; // required
 
@@ -66,6 +70,14 @@ if(isset($_POST['email'])) {
   if(!preg_match($string_exp,$full_name)) {
 
     $error_message .= 'The Name you entered does not appear to be valid.<br />';
+
+  }
+
+  $string_exp = "/^[0-9._%-]+$/";
+
+  if(!preg_match($string_exp,$phone)) {
+
+    $error_message .= 'The Phone Number you entered does not appear to be valid.<br />';
 
   }
 
@@ -98,6 +110,8 @@ if(isset($_POST['email'])) {
     $email_message .= "Name: ".clean_string($full_name)."\n";
 
     $email_message .= "Email: ".clean_string($email_from)."\n";
+
+    $email_message .= "Phone: ".clean_string($phone)."\n";
 
     $email_message .= "Message: ".clean_string($comments)."\n";
 
