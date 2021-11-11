@@ -37,7 +37,7 @@ if(isset($_POST['email'])) {
 
         !isset($_POST['phone']) ||
 
-        !isset($_POST['comments'])) {
+        !isset($_POST['message'])) {
 
         died('We are sorry, but there appears to be a problem with the form you submitted.');
 
@@ -51,7 +51,7 @@ if(isset($_POST['email'])) {
 
     $phone = $_POST['phone']; // required
 
-    $comments = $_POST['comments']; // required
+    $message = $_POST['message']; // required
 
 
 
@@ -81,7 +81,7 @@ if(isset($_POST['email'])) {
 
   }
 
-  if(strlen($comments) < 2) {
+  if(strlen($message) < 2) {
 
     $error_message .= 'The message you entered do not appear to be valid.<br />';
 
@@ -113,7 +113,7 @@ if(isset($_POST['email'])) {
 
     $email_message .= "Phone: ".clean_string($phone)."\n";
 
-    $email_message .= "Message: ".clean_string($comments)."\n";
+    $email_message .= "Message: ".clean_string($message)."\n";
 
 
 
