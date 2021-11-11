@@ -6,11 +6,14 @@ jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeO
 $(function() {
   $('a.page-scroll').bind('click', function(event) {
       var $anchor = $(this);
+      var x = window.matchMedia("(max-width: 642px)")
       $('html, body').stop().animate({
           scrollTop: $($anchor.attr('href')).offset().top
       }, 1500, 'easeInOutExpo');
       event.preventDefault();
 
-      $('.top-bar').attr("style", "display:none")
+      if (x.matches) {
+        $('.top-bar').attr("style", "display:none")
+      }
   });
 });
