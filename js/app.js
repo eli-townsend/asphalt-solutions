@@ -14,3 +14,14 @@ $(function() {
       $('.top-bar').attr("style", "display:none")
   });
 });
+
+$(function() {
+  $('#submitButton').bind('click', function(event) {
+      var $anchor = $(this);
+      var $spin = $('#formSubmitSpinner');
+      event.preventDefault();
+
+      $anchor.attr("style", "display:none")
+      $spin.attr("style", "display:block; margin: 0 auto;")
+  });
+});

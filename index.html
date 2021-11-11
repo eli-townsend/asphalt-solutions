@@ -239,7 +239,10 @@
           <textarea name="message" id="message" rows="12" placeholder="Type your message here"></textarea>
 
           <div class="contact-us-form-actions">
-            <input type="submit" class="button" value="Send Message" />
+            <input type="submit" class="button" id="submitButton" value="Send Message" />
+
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw display-none" id="formSubmitSpinner" aria-hidden="true"></i>
+            <span class="sr-only">Loading...</span>
           </div>
         </form>
       </div>
@@ -248,7 +251,6 @@
     <footer>
       <div class="rounded-social-buttons">
         <a class="social-button facebook" href="https://www.facebook.com/AsphaltSltns/" target="_blank"></a>
-        <a class="social-button youtube" href="#"></a>
       </div>
 
       &copy; Asphalt Solutions 2021.
